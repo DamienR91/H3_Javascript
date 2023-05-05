@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx">
+      // en 2015 => javascript a évolué version ES6
+      // ECMAScript 6
+      // var => let const
+      // () => {}
+      // class
+      // ...
+      // destructuration
+
+      const livres = [
+        {id : 1 , titre : "les miserables" , publie : 1890 , auteur : {prenom : Victor , nom : Hugo }},
+        {id : 2 , titre : "le horla" , publie : 1886 , auteur : {prenom :  	Guy , nom : Maupassant }},
+        {id : 3 , titre : "le conte de Montecristo " , publie : 1910 , auteur : {prenom : Alexandre  , nom : Dumas }},
+      ]
+
+      //1 Donner la liste de tous les livres écrits avant 1910
+      console.log(livres.filter( (livre) => livre.publie < 1910))
+
+      //2 donner la liste de tous les livres écrit pas victor hugo 
+      const resultat2 = livres.filter(livre =>
+        livre.auteur.prenom.toLowerCase() === "hugo" && livre.auteur.prenom.toLowerCase() === "victor"
+      )
+      console.log(resultat2);
+
+      // le conte de Montercristo a été publié en 1910
+      const phrase = '&{livres[2].titre} a été publié en &{livres[2].publie}'
+
+
+    </script>
+  </body>
+</html>
